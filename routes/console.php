@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schedule;
 use Illuminate\Support\Facades\Storage;
 
-Schedule::command('que:work --stop-when-empty')->timezone('Asia/Jakarta')->everyFiveSeconds();
 Schedule::call(function () {
     $donations = Donation::where('reported', null)->where('status', 'selesai')->get();
     foreach ($donations as $donation) {
