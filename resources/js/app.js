@@ -22,7 +22,7 @@ document.querySelector('#clickFooter').addEventListener('click', function (e) {
         res()
     }
     clickCounter++
-    if (clickCounter == 3) window.location.href = '/login'
+    if (clickCounter == 3) window.location.href = '/pemkot/login'
 })
 function res() {
     setTimeout(() => {
