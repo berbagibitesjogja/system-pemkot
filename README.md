@@ -1,19 +1,9 @@
-# Berbagi Bites Jogja
+# BBJ x Pemkot Jogja Donation System
 
+Sistem manajemen donasi khusus yang berelasi dengan **Pemerintah Kota (Pemkot) Yogyakarta**.
 
-![Logo](https://media.berbagibitesjogja.site/Banner.png)
+## Deskripsi
+Repositori ini memiliki basis yang sama dengan `app-laravel` (fullstack Laravel), namun dikhususkan untuk menangani alur donasi dan kolaborasi strategis dengan Pemkot Jogja. Fokus pada transparansi dan pelaporan formal bagi instansi pemerintah.
 
-
-
-Berbagi Bites Jogja adalah program volunteer yang bertujuan untuk menangani food waste di Yogyakarta. Kami bekerja sama dengan berbagai komunitas dan individu untuk mengurangi makanan yang terbuang dan mendistribusikannya kepada mereka yang membutuhkan.
-
-## Tentang Kami
-
-Berbagi Bites Jogja adalah inisiatif yang dikelola oleh para relawan yang berasal dari civitas akademika Universitas Gadjah Mada baik dosen maupun mahasiswa dengan tujuan utama mengurangi food waste dan memastikan makanan yang layak konsumsi dapat sampai ke tangan yang membutuhkan. Kami memiliki berbagai kegiatan dan program yang berfokus pada edukasi, pengumpulan, dan distribusi makanan.
-
-## Kontak
-Untuk informasi lebih lanjut, kunjungi [website][2] kami atau hubungi kami melalui instagram di [@berbagibitesjogja][1]
-
-[1]: https://www.instagram.com/berbagibitesjogja/           "Instagram"
-
-[2]: https://berbagibitesjogja.site           "Website"
+---
+© 2025 Berbagi Bites Jogja.
