@@ -4,7 +4,8 @@
             <span class="relative z-0 inline-flex rtl:flex-row-reverse shadow-sm rounded-md">
                 {{-- Previous Page Link --}}
                 @if (!$paginator->onFirstPage())
-                    <a href="{{ $paginator->toArray()['first_page_url'] }}"
+                    {{-- FIX: Forcing /pemkot prefix --}}
+                    <a href="{{ Str::replace('berbagibitesjogja.com/', 'berbagibitesjogja.com/pemkot/', $paginator->toArray()['first_page_url']) }}"
                         class="rounded-md mr-1 relative hover:bg-mainGreen hover:text-white inline-flex items-center px-4 py-2 -ml-px text-sm font-medium bg-white border border-gray-300 leading-5 focus:z-10 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
                         Awal
                     </a>
@@ -29,7 +30,8 @@
                                         class="bg-navy relative inline-flex items-center px-4 py-2 -ml-px text-sm font-semibold text-white border border-gray-300 cursor-default leading-5">{{ $page }}</span>
                                 </span>
                             @elseif($page == $paginator->currentPage() - 1 || $page == $paginator->currentPage() + 1)
-                                <a href="{{ $url }}"
+                                {{-- FIX: Forcing /pemkot prefix --}}
+                                <a href="{{ Str::replace('berbagibitesjogja.com/', 'berbagibitesjogja.com/pemkot/', $url) }}"
                                     class="relative hover:bg-navy hover:text-white inline-flex items-center px-4 py-2 -ml-px text-sm font-medium bg-white border border-gray-300 leading-5 focus:z-10 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
                                     aria-label="{{ __('Go to page :page', ['page' => $page]) }}">
                                     {{ $page }}
@@ -41,7 +43,8 @@
 
                 {{-- Next Page Link --}}
                 @if ($paginator->hasMorePages())
-                    <a href="{{ $paginator->toArray()['last_page_url'] }}" rel="next"
+                    {{-- FIX: Forcing /pemkot prefix --}}
+                    <a href="{{ Str::replace('berbagibitesjogja.com/', 'berbagibitesjogja.com/pemkot/', $paginator->toArray()['last_page_url']) }}" rel="next"
                         class="relative ml-1 inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md leading-5 hover:bg-mainGreen hover:text-white focus:z-10 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150">
                         ...
                     </a>
@@ -60,7 +63,6 @@
                 {!! __('dari') !!}
                 <span class="font-medium">{{ $paginator->total() }}</span>
             </p>
-        </div>
         </div>
     </nav>
 @endif
