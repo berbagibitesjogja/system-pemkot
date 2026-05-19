@@ -22,7 +22,7 @@ class DonationController extends Controller implements HasMiddleware
     {
         $donations = Donation::with('sponsor')->orderByRaw("CASE WHEN status = 'aktif' THEN 0 WHEN status = 'selesai' THEN 1 ELSE 2 END")
             ->orderBy('take')
-            ->paginate(10);
+            ->paginate(10)->withPath('/pemkot');
 
         return view('pages.donation.index', compact('donations'));
     }

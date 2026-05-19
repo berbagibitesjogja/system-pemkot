@@ -11,7 +11,7 @@ class FoodController extends Controller
     public function index()
     {
         $donations = Donation::where('status', 'aktif')->get();
-        $foods = Food::with(['donation'])->orderBy('id', 'desc')->paginate(10);
+        $foods = Food::with(['donation'])->orderBy('id', 'desc')->paginate(10)->withPath('/pemkot');
         $total = Food::totalGram();
 
         return view('pages.food.index', compact('donations', 'foods', 'total'));
@@ -31,7 +31,7 @@ class FoodController extends Controller
     public function edit(Food $food)
     {
         $donation = $food->donation;
-        $foods = Food::with(['donation'])->orderBy('id', 'desc')->paginate(10);
+        $foods = Food::with(['donation'])->orderBy('id', 'desc')->paginate(10)->withPath('/pemkot');
 
         return view('pages.food.edit', compact('donation', 'food', 'foods'));
     }

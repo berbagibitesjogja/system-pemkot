@@ -12,9 +12,9 @@ class BeneficiaryController extends Controller
     public function index(Request $request)
     {
         if ($request['variant']) {
-            $beneficiaries = University::where('variant', $request['variant'])->with(['heroes'])->paginate(10);
+            $beneficiaries = University::where('variant', $request['variant'])->with(['heroes'])->paginate(10)->withPath('/pemkot');
         } else {
-            $beneficiaries = University::with(['heroes'])->paginate(20);
+            $beneficiaries = University::with(['heroes'])->paginate(20)->withPath('/pemkot');
         }
 
         return view('pages.beneficiary.index', compact('beneficiaries'));
@@ -23,8 +23,8 @@ class BeneficiaryController extends Controller
     public function show(University $beneficiary)
     {
         $heroes = $beneficiary->heroes->unique('donation_id')->pluck('donation_id');
-        $donations = Donation::whereIn('id', $heroes)->with(['sponsor', 'foods'])->paginate(10, ['*'], 'donations');
-        $faculties = $beneficiary->faculties()->paginate(10, ['*'], 'faculties');
+        $donations = Donation::whereIn('id', $heroes)->with(['sponsor', 'foods'])->paginate(10, ['*'], 'donations')->withPath('/pemkot');
+        $faculties = $beneficiary->faculties()->paginate(10, ['*'], 'faculties')->withPath('/pemkot');
 
         return view('pages.beneficiary.show', compact('beneficiary', 'donations', 'faculties'));
     }
