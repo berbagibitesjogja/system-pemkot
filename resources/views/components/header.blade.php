@@ -21,12 +21,12 @@
         @auth
             <li><a class="w-full block" href="{{ route('volunteer.home') }}">Home</a></li>
         @else
-            <li><a class="w-full block" href="https://berbagibitesjogja.site/">Home</a></li>
+            <li><a class="w-full block" href="https://berbagibitesjogja.com/pemkot/">Home</a></li>
         @endauth
         @guest
             <li><a class="w-full block" href="{{ route('form.create') }}">Form</a></li>
             <li><a class="w-full block" href="{{ route('donation.index') }}">Donation</a></li>
-            <li><a class="w-full block" href="https://berbagibitesjogja.site/beri-kontribusi">Beri Kontribusi</a></li>
+            <li><a class="w-full block" href="https://berbagibitesjogja.com/pemkot/beri-kontribusi">Beri Kontribusi</a></li>
         @endguest
         @auth
             <li>
@@ -210,7 +210,7 @@
     </div>
 </nav>
 <nav class="z-10 bg-white flex sticky top-0 md:hidden justify-between px-6 pb-6 pt-6">
-    <a href="https://berbagibitesjogja.site" class="flex items-center text-tosca text-2xl font-bold">
+    <a href="https://berbagibitesjogja.com/pemkot" class="flex items-center text-tosca text-2xl font-bold">
         <img src="{{ asset('assets/biru.png') }}" class="w-12" alt="">Berbagi Bites Jogja
     </a>
     <button onclick="openSidebar()">
@@ -277,7 +277,7 @@
     class="z-40 hidden md:flex bg-white sticky top-0 mx-auto p-4 justify-between items-center border-b-2 border-gray-200  px-44">
     <div class="flex flex-row items-center gap-2">
         <img src="{{ asset('assets/biru.png') }}" class="w-10" alt="">
-        <a href="https://berbagibitesjogja.site" class="text-2xl font-semibold text-tosca-500">Berbagi Bites Jogja</a>
+        <a href="https://berbagibitesjogja.com/pemkot" class="text-2xl font-semibold text-tosca-500">Berbagi Bites Jogja</a>
     </div>
     <ul class="flex space-x-8 relative">
 
@@ -293,7 +293,7 @@
                     @else
                     hover-underline text-gray-400 hover:text-tosca @endif
                     py-2"
-                    href="https://berbagibitesjogja.site/" class="text-gray-400 hover:text-tosca py-2">Home</a>
+                    href="https://berbagibitesjogja.com/pemkot/" class="text-gray-400 hover:text-tosca py-2">Home</a>
             @endauth
         </li>
         @guest
@@ -313,7 +313,7 @@
                     py-2">Donation</a>
             </li>
             <li class="relative">
-                <a href="https://berbagibitesjogja.site/beri-kontribusi"
+                <a href="https://berbagibitesjogja.com/pemkot/beri-kontribusi"
                     class="@if (str_contains(request()->route()->getName(), 'form')) border-b-2 border-tosca-500 text-tosca
                     @else
                     hover-underline text-gray-400 hover:text-tosca @endif
