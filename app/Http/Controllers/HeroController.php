@@ -24,7 +24,7 @@ class HeroController extends Controller implements HasMiddleware
 
     public function index()
     {
-        $heroes = Hero::with(['faculty', 'donation'])->paginate(100)->withPath('/pemkot');
+        $heroes = Hero::with(['faculty', 'donation'])->paginate(100);
         $donations = Donation::where('status', 'aktif')->get();
         $faculties = Faculty::all();
 
@@ -179,7 +179,7 @@ class HeroController extends Controller implements HasMiddleware
 
     public function faculty(Faculty $faculty)
     {
-        $heroes = $faculty->heroes()->paginate(50)->withPath('/pemkot');
+        $heroes = $faculty->heroes()->paginate(50);
 
         return view('pages.hero.faculty', compact('heroes'));
     }

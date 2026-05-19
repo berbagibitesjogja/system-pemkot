@@ -11,9 +11,9 @@ class SponsorController extends Controller
     public function index(Request $request)
     {
         if ($request['variant']) {
-            $sponsors = Sponsor::where('variant', $request['variant'])->with(['donation', 'heroes', 'foods'])->paginate(10)->withPath('/pemkot');
+            $sponsors = Sponsor::where('variant', $request['variant'])->with(['donation', 'heroes', 'foods'])->paginate(10);
         } else {
-            $sponsors = Sponsor::with(['donation', 'heroes', 'foods'])->paginate(10)->withPath('/pemkot');
+            $sponsors = Sponsor::with(['donation', 'heroes', 'foods'])->paginate(10);
         }
 
         return view('pages.sponsor.index', compact('sponsors'));
@@ -40,7 +40,7 @@ class SponsorController extends Controller
     public function show(Sponsor $sponsor)
     {
         $sponsor = Sponsor::where('id', $sponsor->id)->with('foods')->first();
-        $donations = Donation::where('sponsor_id', $sponsor->id)->with('foods')->paginate(10)->withPath('/pemkot');
+        $donations = Donation::where('sponsor_id', $sponsor->id)->with('foods')->paginate(10);
 
         return view('pages.sponsor.show', compact('sponsor', 'donations'));
     }
