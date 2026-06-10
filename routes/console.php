@@ -19,7 +19,7 @@ Schedule::call(function () {
             $donation->reported = "sudah";
             $donation->save();
         } catch (\Throwable $th) {
-            BotController::sendForPublic('6289636055420', $th->getMessage(), 'SECOND');
+            $h = $th;
         }
     }
 })->timezone('Asia/Jakarta')->dailyAt('23.00');
